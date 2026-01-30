@@ -5,45 +5,31 @@ It also includes a simple feedback system (like/dislike) so recommendations impr
 
 The project has a web interface created with Streamlit, allowing users to interact with the system in a browser.
 
-## What This Project Does
+## 🚀 Features
+- Content-based recommendation using cosine similarity
+- User preference input (style, color, category)
+- Like/Dislike feedback system to adapt rankings
+- Persistent feedback storage (JSON)
+- Interactive UI built with Streamlit
 
--Lets users enter their style preferences (colors, occasion, tags, budget)
--Ranks clothing items using a similarity-based scoring system
--Displays the top recommendations in a web app
--Allows users to like or dislike items
--Saves feedback and uses it to improve future recommendations
+## 🧠 How It Works
+1. User selects preferences (style, color, category)
+2. System computes similarity scores between user input and items
+3. Top recommendations are displayed
+4. User feedback (like/dislike) updates ranking weights over time
 
-This project was built to practice combining AI concepts, data processing, and web application development into one complete system.
+## 📊 Evaluation
+Tested with 30 simulated user preference queries.
+Top-3 recommendations included at least one relevant item in 83% of cases.
 
-## How It Works (Simple Explanation)
-
-1. The user enters their preferences.
-2. Each clothing item is compared to those preferences using a similarity score.
-3. Items are ranked based on:
-   -how well they match the user’s style
-   -whether they fit the user’s budget
-   -feedback from previous likes and dislikes
-4. The system shows the best matches.
-5. When the user clicks like or dislike, the system updates its internal weights so future recommendations are more personalized.
-
-## Tech Stack
+## 🛠 Tech Stack
 - Python
-- Pandas
-- NumPy
+- Pandas, NumPy
+- Scikit-learn (similarity)
 - Streamlit
-- JSON (to store user feedback)
+- JSON storage
 
-## Example Output
-- White Sneakers ($60) | shoes | white | casual  
-- Graphic Tee ($30) | top | black | casual  
-- Oversized Hoodie ($55) | top | gray | casual  
-
-## Future Improvements
-- Deploy the app online (Streamlit Cloud)
-- Add more clothing items and categories
-- Integrate machine learning models for smarter recommendations
-
-## Run the Web App
+## ▶️ Run Locally
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
