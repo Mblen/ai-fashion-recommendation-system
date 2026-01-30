@@ -1,15 +1,27 @@
-# AI Fashion Recommendation System (Python)
+# AI Fashion Recommendation System
 
-A simple, explainable fashion recommender that ranks clothing items based on:
-- user preferences (colors, occasion, style tags)
-- similarity scoring (cosine similarity on tags)
-- budget-aware scoring
+A Python-based fashion recommendation system that suggests outfits based on user preferences such as:
+- preferred colors
+- occasion
+- style tags
+- budget
+
+The system ranks items using similarity scoring and produces personalized recommendations.
 
 ## Features
-- Interactive CLI input (preferences)
-- Hybrid scoring: tag similarity + boosts (color/occasion) + budget penalty
-- Easy to extend with real user feedback or embeddings later
+- Interactive command-line interface
+- Similarity scoring using user style tags
+- Budget-aware ranking
+- Modular and scalable code design
+- Easy to extend into a web or mobile app
 
-## Setup
+## Tech Stack
+- Python
+- Pandas
+- NumPy
+
+## How to Run
+
 ```bash
 pip install -r requirements.txt
+python src/recommender.py --interactive
