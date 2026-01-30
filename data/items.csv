@@ -1,0 +1,13 @@
+item_id,name,category,color,occasion,style_tags,price
+1,White Sneakers,shoes,white,casual,"minimal,streetwear,comfortable",60
+2,Black Chelsea Boots,shoes,black,smart-casual,"minimal,classic,edgy",120
+3,Denim Jacket,outerwear,blue,casual,"streetwear,classic,layering",75
+4,Beige Trench Coat,outerwear,beige,formal,"classic,minimal,elegant",140
+5,Floral Midi Dress,dress,pink,date,"romantic,feminine,elegant",90
+6,Oversized Hoodie,top,gray,casual,"streetwear,comfortable,oversized",55
+7,White Button-Up Shirt,top,white,formal,"classic,minimal,elegant",45
+8,Black Wide-Leg Pants,bottom,black,work,"minimal,elegant,classic",70
+9,Graphic Tee,top,black,casual,"streetwear,edgy,fun",30
+10,Leather Jacket,outerwear,black,night-out,"edgy,streetwear,classic",160
+11,Blue Straight Jeans,bottom,blue,casual,"classic,comfortable,minimal",50
+12,Red Heels,shoes,red,formal,"elegant,romantic,bold",110
