@@ -9,19 +9,27 @@ A Python-based fashion recommendation system that suggests outfits based on user
 The system ranks items using similarity scoring and produces personalized recommendations.
 
 ## Features
-- Interactive command-line interface
-- Similarity scoring using user style tags
-- Budget-aware ranking
-- Modular and scalable code design
-- Easy to extend into a web or mobile app
+- Interactive web interface using Streamlit
+- Personalized recommendations based on user preferences
+- Feedback system (like/dislike) that improves results over time
+- Budget-aware and similarity-based ranking
 
 ## Tech Stack
 - Python
 - Pandas
 - NumPy
 
-## How to Run
+## Example Output
+- White Sneakers ($60) | shoes | white | casual  
+- Graphic Tee ($30) | top | black | casual  
+- Oversized Hoodie ($55) | top | gray | casual  
 
+## Future Improvements
+- Deploy the app online (Streamlit Cloud)
+- Add more clothing items and categories
+- Integrate machine learning models for smarter recommendations
+
+## Run the Web App
 ```bash
 pip install -r requirements.txt
-python src/recommender.py --interactive
+streamlit run app.py
