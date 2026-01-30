@@ -5,6 +5,38 @@ from typing import List, Dict, Tuple
 
 import numpy as np
 import pandas as pd
+import json
+from pathlib import Path
+
+FEEDBACK_PATH = Path("data/feedback.json")
+
+def load_feedback() -> dict:
+    if FEEDBACK_PATH.exists():
+        try:
+            return json.loads(FEEDBACK_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+def save_feedback(feedback: dict) -> None:
+    FEEDBACK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    FEEDBACK_PATH.write_text(json.dumps(feedback, indent=2), encoding="utf-8")
+
+def update_tag_weights(feedback: dict, liked_tags: list[str], disliked_tags: list[str]) -> None:
+    learned = feedback.get("tag_weights", {})
+    lr = 0.2
+
+    for t in liked_tags:
+        t = t.strip().lower()
+        if t:
+            learned[t] = float(learned.get(t, 0.0)) + lr
+
+    for t in disliked_tags:
+        t = t.strip().lower()
+        if t:
+            learned[t] = float(learned.get(t, 0.0)) - lr
+
+    feedback["tag_weights"] = learned
 
 
 @dataclass
@@ -76,7 +108,9 @@ def score_item(row: pd.Series, user: UserPrefs, user_vec: np.ndarray, vocab: Dic
     return float(score)
 
 
-def recommend(items: pd.DataFrame, user: UserPrefs) -> pd.DataFrame:
+def recommend(items: pd.DataFrame, user: UserPrefs, feedback: dict | None = None) -> pd.DataFrame:
+    if feedback is None:
+        feedback = {}
     # vocab from dataset
     vocab = build_tag_vocab(items["style_tags"])
     user_vec = tags_to_vec(",".join(user.tags), vocab)
