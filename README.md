@@ -1,23 +1,37 @@
 # AI Fashion Recommendation System
 
-A Python-based fashion recommendation system that suggests outfits based on user preferences such as:
-- preferred colors
-- occasion
-- style tags
-- budget
+This project is a fashion recommendation system built in Python that suggests clothing items based on user preferences such as color, occasion, style tags, and budget.
+It also includes a simple feedback system (like/dislike) so recommendations improve over time.
 
-The system ranks items using similarity scoring and produces personalized recommendations.
+The project has a web interface created with Streamlit, allowing users to interact with the system in a browser.
 
-## Features
-- Interactive web interface using Streamlit
-- Personalized recommendations based on user preferences
-- Feedback system (like/dislike) that improves results over time
-- Budget-aware and similarity-based ranking
+## What This Project Does
+
+-Lets users enter their style preferences (colors, occasion, tags, budget)
+-Ranks clothing items using a similarity-based scoring system
+-Displays the top recommendations in a web app
+-Allows users to like or dislike items
+-Saves feedback and uses it to improve future recommendations
+
+This project was built to practice combining AI concepts, data processing, and web application development into one complete system.
+
+## How It Works (Simple Explanation)
+
+1. The user enters their preferences.
+2. Each clothing item is compared to those preferences using a similarity score.
+3. Items are ranked based on:
+   -how well they match the user’s style
+   -whether they fit the user’s budget
+   -feedback from previous likes and dislikes
+4. The system shows the best matches.
+5. When the user clicks like or dislike, the system updates its internal weights so future recommendations are more personalized.
 
 ## Tech Stack
 - Python
 - Pandas
 - NumPy
+- Streamlit
+- JSON (to store user feedback)
 
 ## Example Output
 - White Sneakers ($60) | shoes | white | casual  
